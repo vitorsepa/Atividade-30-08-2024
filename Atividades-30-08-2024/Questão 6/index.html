@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulação de Classes</title>
+    <style>
+        .div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            margin: 10px;
+        }
+        .div2 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            margin: 10px;
+        }
+        .div3 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 10px;
+        }
+        .newClass1 {
+            background-color: yellow;
+        }
+        .newClass2 {
+            background-color: purple;
+        }
+        .newClass3 {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="div1"></div>
+    <div class="div2"></div>
+    <div class="div3"></div>
+    <button onclick="changeClasses()">Trocar Classes</button>
+
+    <script>
+        function changeClasses() {
+            const div1 = document.querySelector('.div1');
+            const div2 = document.querySelector('.div2');
+            const div3 = document.querySelector('.div3');
+
+            // Adiciona uma nova classe à primeira div
+            div1.classList.add('newClass1');
+
+            // Remove uma classe da segunda div
+            div2.classList.remove('div2');
+            div2.classList.add('newClass2');
+
+            // Alterna uma classe na terceira div
+            div3.classList.toggle('newClass3');
+        }
+    </script>
+</body>
+</html>

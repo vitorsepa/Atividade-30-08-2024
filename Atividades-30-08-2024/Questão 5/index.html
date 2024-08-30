@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        input {
+            padding: 10px;
+            margin: 10px;
+        }
+        button {
+            padding: 10px;
+            margin: 10px;
+        }
+        .message {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo de Adivinhação</h1>
+        <input type="number" id="guessInput" placeholder="Digite seu palpite">
+        <button onclick="checkGuess()">Enviar</button>
+        <div class="message" id="message"></div>
+    </div>
+
+    <script>
+        let randomNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+
+        function checkGuess() {
+            const userGuess = document.getElementById('guessInput').value;
+            const message = document.getElementById('message');
+            attempts++;
+
+            if (userGuess == randomNumber) {
+                message.textContent = `Parabéns! Você acertou o número ${randomNumber} em ${attempts} tentativas.`;
+                resetGame();
+            } else if (userGuess < randomNumber) {
+                message.textContent = 'Seu palpite está muito baixo. Tente novamente!';
+            } else {
+                message.textContent = 'Seu palpite está muito alto. Tente novamente!';
+            }
+        }
+
+        function resetGame() {
+            randomNumber = Math.floor(Math.random() * 100) + 1;
+            attempts = 0;
+            document.getElementById('guessInput').value = '';
+        }
+    </script>
+</body>
+</html>

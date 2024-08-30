@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagens</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Galeria de Imagens</h1>
+        <img id="imagemPrincipal" src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2023/03/16/1424845971-hamster-1.jpg" alt="Imagem Principal">
+        <div class="miniaturas">
+            <img src="https://revistapulodogato.com.br/home/advantages-01.png" alt="Miniatura 2">
+            <img src="https://blogdodinoadestrador.wordpress.com/wp-content/uploads/2014/03/kandor-eating-grass-256.jpg" alt="Miniatura 3">
+            <img src="https://i.pinimg.com/474x/38/4b/f0/384bf0e76d5f603ca9342b55b0105daa.jpg" alt="Miniatura 4">
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.miniaturas img').forEach(function(img) {
+            img.addEventListener('click', function() {
+                document.getElementById('imagemPrincipal').src = this.src;
+            });
+        });
+    </script>
+</body>
+</html>
